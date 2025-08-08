@@ -164,6 +164,15 @@ footer {
   }
 }
 
+/* Make FIFA logo more visible on dark background */
+p[align="center"]:last-of-type img[src*="FIFA"] {
+  background: rgba(255, 255, 255, 0.85); /* light semi-transparent background */
+  padding: 2px 5px;
+  border-radius: 4px;
+  filter: brightness(110%) contrast(110%);
+  box-shadow: 0 0 5px rgba(255,255,255,0.7);
+}
+
 /* Video container */
 #youtube-player {
   display: block;
