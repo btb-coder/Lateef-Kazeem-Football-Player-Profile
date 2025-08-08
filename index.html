@@ -109,20 +109,6 @@
       max-width: 60px;
       height: auto;
       filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.6));
-      background: transparent;
-      padding: 0;
-      border-radius: 0;
-      box-shadow: none;
-      transition: none;
-    }
-
-    /* Make FIFA logo more visible on dark background */
-    p[align="center"]:last-of-type img[src*="FIFA"] {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 2px 5px;
-      border-radius: 4px;
-      filter: brightness(110%) contrast(110%);
-      box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
     }
 
     /* Horizontal rule styling */
@@ -177,24 +163,40 @@
         max-width: 45px;
         margin: 0 12px 15px 12px;
       }
-
-      /* FIFA logo padding and size on mobile */
-      p[align="center"]:last-of-type img[src*="FIFA"] {
-        padding: 1px 3px;
-        border-radius: 3px;
-        max-width: 45px;
-        box-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
-      }
     }
 
-    /* Video container */
-    #youtube-player {
-      display: block;
+    /* Make FIFA logo more visible on dark background */
+    p[align="center"]:last-of-type img[src*="FIFA"] {
+      background: rgba(255, 255, 255, 0.85);
+      /* light semi-transparent background */
+      padding: 2px 5px;
+      border-radius: 4px;
+      filter: brightness(110%) contrast(110%);
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    }
+
+    /* Responsive YouTube video wrapper */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
       max-width: 560px;
+      padding-bottom: 56.25%;
+      /* 16:9 aspect ratio */
+      height: 0;
       margin: 30px auto;
       border-radius: 10px;
-      overflow: hidden;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    #youtube-player {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+      border: 0;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -263,8 +265,10 @@
   <h2>Video Portfolio</h2>
   <p><a href="https://youtu.be/rjg0Gb7vKhE?si=g3fxFPSUg_pE6wEC">See Lateef Kazeem in Action</a></p>
 
-  <!-- YouTube player container -->
-  <div id="youtube-player"></div>
+  <!-- Responsive YouTube player container -->
+  <div class="video-wrapper">
+    <div id="youtube-player"></div>
+  </div>
 
   <br />
 
