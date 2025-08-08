@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lateef Kazeem - Football Player Profile</title>
-</head>
-
     <style>
         /* Base styles */
 body {
@@ -145,6 +143,7 @@ footer {
 }
 
     </style>
+</head>
 
 <body>
     <h1>Lateef Kazeem</h1>
@@ -210,12 +209,15 @@ footer {
 
     <h2>Video Portfolio</h2>
         <p><a href="https://youtu.be/rjg0Gb7vKhE?si=g3fxFPSUg_pE6wEC">See Lateef Kazeem in Action</a></p>
-        <div align="center">
-            <iframe width="560" height="315"
-                src="https://www.youtube-nocookie.com/embed/rjg0Gb7vKhE?autoplay=1&mute=1"
+        <div id="video-container" style="max-width:560px; margin:auto;">
+            <iframe
+                id="youtube-video"
+                width="560" height="315"
+                src="https://www.youtube.com/embed/rjg0Gb7vKhE?mute=1"  <!-- no autoplay yet -->
                 title="Lateef Kazeem Highlights"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="autoplay"
                 allowfullscreen>
             </iframe>
         </div>
@@ -236,6 +238,7 @@ footer {
             <img src="./img/Confederation_of_African_Football_logo.svg.png" height="30" alt="caf logo"/>
             <img src="./img/Nigeria_Football_Federation_logo.svg.png" height="30" alt="nff logo"/>
             <img src="./img/NLO-LOGO-1-400x497.jpeg" height="30" alt="nlo logo"/>
+
         </p>
 
     <hr />
@@ -245,13 +248,40 @@ footer {
             © 2025 Lateef Kazeem. All rights reserved.
         </small>
     </footer>
+    
+<script>
+  // Helper function to check if element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  const iframe = document.getElementById('youtube-video');
+
+  function checkAndAutoplay() {
+    if (isInViewport(iframe)) {
+      // Add autoplay=1 to the src if not already there
+      if (!iframe.src.includes('autoplay=1')) {
+        iframe.src = iframe.src.replace('?mute=1', '?autoplay=1&mute=1');
+      }
+      // Remove event listener once autoplay started
+      window.removeEventListener('scroll', checkAndAutoplay);
+    }
+  }
+
+  // Check on page load and scroll
+  window.addEventListener('scroll', checkAndAutoplay);
+  window.addEventListener('load', checkAndAutoplay);
+</script>
 </body>
 
+
 </html>
-
-
-
-
 
 
 
