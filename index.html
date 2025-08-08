@@ -7,6 +7,145 @@
     <title>Lateef Kazeem - Football Player Profile</title>
 </head>
 
+    <style>
+        /* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 15px;
+  color: #222;
+  background-color: #fafafa;
+  box-sizing: border-box;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  font-size: 2.8em;
+  margin-bottom: 0.2em;
+  color: #003366;
+}
+
+h2 {
+  color: #00509e;
+  border-bottom: 2px solid #00509e;
+  padding-bottom: 5px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+/* Main profile image */
+h1 + img {
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Paragraph styling */
+p {
+  line-height: 1.6;
+  font-size: 1em;
+}
+
+/* Bold labels inside paragraphs */
+p b {
+  color: #003366;
+}
+
+/* Lists */
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #333;
+  padding-left: 0;
+}
+
+/* Links */
+a {
+  color: #00509e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery of images */
+p[align="center"] img {
+  margin: 10px 10px 15px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 45%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Logos at the bottom */
+p[align="center"]:last-of-type img {
+  margin: 0 15px;
+  vertical-align: middle;
+  max-width: 60px;
+  height: auto;
+}
+
+/* Horizontal rule styling */
+hr {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin: 35px 0;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  font-size: 0.85em;
+  color: #555;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  body {
+    padding: 0 10px;
+    margin: 10px auto;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+
+  /* Make gallery images stack vertically on small screens */
+  p[align="center"] img {
+    max-width: 90%;
+    margin: 10px auto 15px auto;
+    display: block;
+  }
+
+  /* Logos scale down for small screens */
+  p[align="center"]:last-of-type img {
+    max-width: 40px;
+    margin: 0 10px 10px 10px;
+  }
+}
+
+    </style>
+
 <body>
     <h1>Lateef Kazeem</h1>
     <img src="./img/Lateef Kazeem 1.jpg" height="150" alt="Lateef Kazeem"/>
@@ -98,5 +237,6 @@
         </small>
     </footer>
 </body>
+
 
 </html>
