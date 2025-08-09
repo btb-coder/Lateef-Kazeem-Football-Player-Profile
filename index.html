@@ -151,7 +151,18 @@
         font-size: 0.95em;
       }
 
-      /* Removed image layout overrides to preserve desktop layout on mobile */
+      /* Make gallery images stack vertically on small screens */
+      p[align="center"] img {
+        max-width: 90%;
+        margin: 15px auto 20px auto;
+        display: block;
+      }
+
+      /* Logos scale down for small screens */
+      p[align="center"]:last-of-type img {
+        max-width: 45px;
+        margin: 0 12px 15px 12px;
+      }
     }
 
     /* Make FIFA logo more visible on dark background */
